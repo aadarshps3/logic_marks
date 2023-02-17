@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+            <tr>
+                          <th>S1.</th>
+                          <th>S2</th>
+                          <th>S3</th>
+                          <th>S4</th>
+                          <th>S5</th>
+                          <th>S6</th>
+                          <th>TOTAL</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for i in data %}
+                        <tr>
+                          <td>{{ i.s1 }}</td>
+                          <td>{{ i.s2 }}</td>
+                          <td>{{ i.s3 }}</td>
+                          <td>{{ i.s4 }}</td>
+                          <td>{{ i.s5 }}</td>
+                          <td>{{ i.s6 }}</td>
+                          <td>{{ i.total }}</td>
+                          <td>
+                           {% if i.s1 > 35 or i.s2 > 35 or i.s3 > 35 or i.s4 > 35 or i.s5 > 35 or i.s6 > 35 %}
+                                  <p style="color:green">PASS</p>
+                              {% else %}
+                         <p style="color:red">Fail</p>
+                              {% endif %}
+                          </td>
+    {% endfor %}
+    </table>
+
+</body>
+</html>
